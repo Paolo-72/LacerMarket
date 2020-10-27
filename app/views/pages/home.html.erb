@@ -1,2 +1,10 @@
+<!-- Nei file .erb(embedded Ruby) è possibile inserire del codice Ruby che verrà interpretato come html-->
 <h1>Questa è la nostra homepage</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<!--Inserimento link Clicca qui per collegamento ad altra pagina tramite html -->
+<!--<p><a href="http://lacerba.io"> Clicca qui </a> per scoprire di più</p>-->
+
+<!--Inserimento link Clicca qui tramite codice Ruby -->
+<!--I simboli %= + la funzione link_to sostituiscono il tag <a> -->
+<!-- Per inserire la chiamata alla pagina di about recupero il percorso tramite il comando server "rake routes" aggiungendo all'azione about _path-->
+<p><%= link_to "Clicca qui" , about_path%> per scoprire di più</p>
