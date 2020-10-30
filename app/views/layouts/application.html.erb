@@ -4,12 +4,46 @@
     <title>LacerMarket</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--Utilizzo icone materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <!-- Richiamo file parziale _header.html.erb tramite codice erb Ruby-->
+    <%= render "layouts/header" %>     
+
+            <ul class="sidenav" id="mobile-demo">
+              <%= link_to "About" , about_path%>    
+            </ul>
+
+    <!--Prima della funzione yeld possono essere caricati tutti gli elementi comuni alle pagine del progetto es.barra di navigazione o footer -->
+    <!-- Elementi comuni alle pagine home ed about -->
+    <!--Inserimento link Clicca qui tramite codice Ruby -->
+    <!--I simboli %= + la funzione link_to sostituiscono il tag <a> -->
+    <!-- Per inserire la chiamata alla pagina di about recupero il percorso tramite il comando server "rake routes" aggiungendo all'azione about _path-->
+    
+
+   <!--La funzione yield è quella che si occupa di caricare tutte le altre pagine del progetto -->
+   <%= yield %>
+  </body>  
+    <!-- Inserimento del Javascript di inizializzazione della navbar sopra-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var options = {
+             edge: 'left',
+             draggable: true,
+             inDuration: 250,
+             outDuration: 200,
+             onOpenStart: null,
+             onOpenEnd: null,
+             onCloseStart: null,
+             onCloseEnd: null,
+             preventScrolling: true
+          }
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems, options);
+        });
+    </script>
 </html>
