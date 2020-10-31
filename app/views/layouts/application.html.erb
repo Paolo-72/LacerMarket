@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <!-- Richiamo file parziale _header.html.erb tramite codice erb Ruby-->
+    <!-- Richiamo file parziale _header.html.erb tramite codice erb Ruby per inserimento barra di navifazione-->
     <%= render "layouts/header" %>     
 
             <ul class="sidenav" id="mobile-demo">
@@ -24,9 +24,15 @@
     <!--I simboli %= + la funzione link_to sostituiscono il tag <a> -->
     <!-- Per inserire la chiamata alla pagina di about recupero il percorso tramite il comando server "rake routes" aggiungendo all'azione about _path-->
     
+    <!-- main-->
+    <main>
+     <!--La funzione yield è quella che si occupa di caricare tutte le altre pagine del progetto -->
+     <%= yield %>
+    </main>
+    
+   <!-- Richiamo file parziale _footer.html.erb tramite codice erb Ruby per inserimento piede di pagina(footer)-->
+   <%= render "layouts/footer" %>
 
-   <!--La funzione yield è quella che si occupa di caricare tutte le altre pagine del progetto -->
-   <%= yield %>
   </body>  
     <!-- Inserimento del Javascript di inizializzazione della navbar sopra-->
     <script>

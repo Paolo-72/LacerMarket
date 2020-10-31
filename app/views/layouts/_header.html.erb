@@ -1,10 +1,9 @@
 <!--file parziale -->
 <!--Introduzione della barra di navigazione mobile responsive da materialize che sarà comune a tutte le pagine-->
-<header class="navbar-fixed"> 
+<header class="navbar-fixed"> <!-- Barra di navigazione fissa-->
 	<nav class="blue-grey darken-2">
 		<div class="container nav-wrapper">
-	  		<!--<a href="#!" class="brand-logo">Logo</a>-->
-	    	<%= link_to "LacerMarket" , root_path, class: "brand-logo" %>
+	    	<%= link_to "LacerMarket" , root_path, class: "brand-logo" %> <!--Sostituisce<a href="#!" class="brand-logo">Logo</a>-->
 	    	<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 		    <ul class="right hide-on-med-and-down">
 		      <%= link_to "About" , about_path%>    
