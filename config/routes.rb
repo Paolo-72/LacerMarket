@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #Il comando get crea un link 'pages/home'
   #get 'pages/home'
   #Il comando root crea la pagina di riferimento(pages#home) impostando il controller pages e l'azione home

@@ -12,7 +12,10 @@
 
   <body>
     <!-- Richiamo file parziale _header.html.erb tramite codice erb Ruby per inserimento barra di navifazione-->
-    <%= render "layouts/header" %>     
+    <%= render "layouts/header" %>  
+    <!--Inserimento classi per gestione flash messagges -->   
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
             <ul class="sidenav" id="mobile-demo">
               <%= link_to "About" , about_path%>    

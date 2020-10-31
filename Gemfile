@@ -26,6 +26,9 @@ gem 'jbuilder', '~> 2.5'
 #Gem Materialize
 gem  "materialize-sass" ,  "~> 1.0.0"
 
+#Gem Devise per database
+gem 'devise'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
