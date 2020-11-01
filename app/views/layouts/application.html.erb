@@ -11,15 +11,11 @@
   </head>
 
   <body>
-    <!-- Richiamo file parziale _header.html.erb tramite codice erb Ruby per inserimento barra di navifazione-->
+    <!-- Richiamo file parziale _header.html.erb tramite codice erb Ruby per inserimento barra di navigazione-->
     <%= render "layouts/header" %>  
     <!--Inserimento classi per gestione flash messagges -->   
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
-            <ul class="sidenav" id="mobile-demo">
-              <%= link_to "About" , about_path%>    
-            </ul>
 
     <!--Prima della funzione yeld possono essere caricati tutti gli elementi comuni alle pagine del progetto es.barra di navigazione o footer -->
     <!-- Elementi comuni alle pagine home ed about -->
@@ -27,17 +23,21 @@
     <!--I simboli %= + la funzione link_to sostituiscono il tag <a> -->
     <!-- Per inserire la chiamata alla pagina di about recupero il percorso tramite il comando server "rake routes" aggiungendo all'azione about _path-->
     
-    <!-- main-->
-    <main>
+    <!-- main la classe container centra a video tutte le visualizzazioni delle pagine-->
+    <main class="container">
      <!--La funzione yield è quella che si occupa di caricare tutte le altre pagine del progetto -->
      <%= yield %>
     </main>
     
-   <!-- Richiamo file parziale _footer.html.erb tramite codice erb Ruby per inserimento piede di pagina(footer)-->
-   <%= render "layouts/footer" %>
+    <!-- Parte di mobile per la visualizzazione responsive -->
+     <%= render "layouts/mobile" %> 
 
-  </body>  
-    <!-- Inserimento del Javascript di inizializzazione della navbar sopra-->
+   <!-- Richiamo file parziale _footer.html.erb tramite codice erb Ruby per inserimento piede di pagina(footer)-->
+     <%= render "layouts/footer" %>
+
+  </body> 
+
+  <!-- Inserimento del Javascript di inizializzazione della navbar sopra-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
           var options = {
@@ -54,5 +54,5 @@
           var elems = document.querySelectorAll('.sidenav');
           var instances = M.Sidenav.init(elems, options);
         });
-    </script>
+    </script>  
 </html>

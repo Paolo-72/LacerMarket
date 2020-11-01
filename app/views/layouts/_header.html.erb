@@ -5,8 +5,15 @@
 		<div class="container nav-wrapper">
 	    	<%= link_to "LacerMarket" , root_path, class: "brand-logo" %> <!--Sostituisce<a href="#!" class="brand-logo">Logo</a>-->
 	    	<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		    <!--Inserimento tag About Log In tramite lista non ordinata --> 
 		    <ul class="right hide-on-med-and-down">
-		      <%= link_to "About" , about_path%>    
+		      <!--Inserimento link condizionale(% senza = perchè non visualizzato) -->
+		      <% if user_signed_in? %>
+		      	<li><%= link_to "Log Out",  destroy_user_session_path, method: :delete %></li> <!-- Richiama il metodo cancellare(:method :delete)-->    
+		      <% else%>	
+				<li><%= link_to "Log In",  new_user_session_path%></li>
+				<li><%= link_to "Registrazione",  new_user_registration_path%></li>
+			  <% end %>
 		    </ul>
 		</div>
 	</nav>
