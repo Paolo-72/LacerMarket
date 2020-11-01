@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contents
   devise_for :users
   #Il comando get crea un link 'pages/home'
   #get 'pages/home'
