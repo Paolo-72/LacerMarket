@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #Imposto la pagina iniziale
   #get 'pages/home'
   root 'pages#home'

@@ -27,6 +27,8 @@ gem 'materialize-sass', '~> 1.0.0'
 
 gem 'sass-rails'
 
+gem 'devise'
+
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
