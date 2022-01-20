@@ -16,10 +16,15 @@
     <!--Richiamo della barra header tramite funzione Ruby render-->
     <%= render "layouts/header" %>
 
-    
     <!-- la funzione yield permette di scrivere una sola sola volta le parti ripetute nelle varie pagine-->
-    <!-- Scrivo la barra di navigazione in alto-->      
-    <%= yield %>
+    <!-- Scrivo la barra di navigazione in alto ed il footer in basso-->      
+    <main>
+      <%= yield %>
+    </main>
+    
+    <!--Richiamo della barra footer tramite funzione Ruby render-->
+    <%= render "layouts/footer" %>
+
 
   </body>
 
