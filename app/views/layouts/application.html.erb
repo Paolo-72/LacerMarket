@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LacerMarket</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>LacerMarket</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <!--utilizzo icone materialize-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
+    <!--Richiamo della barra header tramite funzione Ruby render-->
+    <%= render "layouts/header" %>
+
+    
+    <!-- la funzione yield permette di scrivere una sola sola volta le parti ripetute nelle varie pagine-->
+    <!-- Scrivo la barra di navigazione in alto-->      
     <%= yield %>
+
   </body>
+
+  <!--javascript per pulsante mobile-collapse-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <!--jquery-->
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    })
+  </script>
+
 </html>
