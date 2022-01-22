@@ -3,8 +3,13 @@
 <%= render @content %>
 
 <div>
-  <%= link_to "Edit this content", edit_content_path(@content) %> |
+  <% if @content.user == current_user %>
+    <%= link_to "Edit this content", edit_content_path(@content) %>
+  <% end %>
+   |
   <%= link_to "Back to contents", contents_path %>
 
-  <%= button_to "Destroy this content", @content, method: :delete %>
+  <% if @content.user == current_user  %>
+    <%= button_to "Destroy this content", @content, method: :delete %>
+  <% end %>
 </div>

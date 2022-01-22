@@ -248,7 +248,8 @@ Devise.setup do |config|
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  # config.default_scope = :user
+  config.default_scope = :user
+  #inserito
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.
@@ -265,6 +266,7 @@ Devise.setup do |config|
   # The "*/*" below is required to match Internet Explorer requests.
   #config.navigational_formats = ['*/*', :html]
   #config.navigational_formats = ['*/*', :html, :turbo_stream]
+  #inserito
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete

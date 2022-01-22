@@ -1,48 +1,51 @@
 class ContentsController < ApplicationController
   before_action :set_content, only: %i[ show edit update destroy ]
+  #Verifico che l'utente sia logato tramite authenticate_user! di devise su tutte le funzioni ad eccezione di index e show
+  before_action :authenticate_user!,except:[:index,:show]
+  #Verifico se l'utente loggato è lo stesso dell'utente associato al contenuto vedi sotto la funzione che ho creato
+  before_action :check_user,only: %i[edit update destroy]
 
-  # GET /contents or /contents.json
+  
   def index
+    #La variabile @contents memorizza tutti i campi della tabella Content (Content.all)
     @contents = Content.all
   end
 
-  # GET /contents/1 or /contents/1.json
+  
   def show
   end
 
-  # GET /contents/new
+  
   def new
-    @content = Content.new
+    #@content = Content.new
+    @content = current_user.contents.build
   end
 
-  # GET /contents/1/edit
+  
   def edit
   end
 
-  # POST /contents or /contents.json
+  
   def create
-    @content = Content.new(content_params)
+    #@content = Content.new(content_params)
+    @content = current_user.contents.build(content_params)
 
     respond_to do |format|
       if @content.save
         format.html { redirect_to content_url(@content), notice: "Content was successfully created." }
-        format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /contents/1 or /contents/1.json
+  
   def update
     respond_to do |format|
       if @content.update(content_params)
         format.html { redirect_to content_url(@content), notice: "Content was successfully updated." }
-        format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -52,8 +55,7 @@ class ContentsController < ApplicationController
     @content.destroy
 
     respond_to do |format|
-      format.html { redirect_to contents_url, notice: "Content was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to contents_url ,notice: "Content was successfully destroyed." }
     end
   end
 
@@ -66,5 +68,12 @@ class ContentsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def content_params
       params.require(:content).permit(:titolo, :descrizione, :price)
+    end
+
+    #Verifico se l'utente loggato è lo stesso dell'utente associato al contenuto
+    def check_user
+      if current_user != @content.user
+        redirect_to root_url,alert: "Scusa ma non hai accesso a questa pagina"
+      end
     end
 end
