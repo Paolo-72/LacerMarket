@@ -3,6 +3,7 @@
 <%= render @content %>
 
 <div>
+  
   <% if @content.user == current_user %>
     <%= link_to "Edit this content", edit_content_path(@content) %>
   <% end %>

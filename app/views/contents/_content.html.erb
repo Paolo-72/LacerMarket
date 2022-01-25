@@ -1,4 +1,9 @@
+<!-- Resize delle immagini -->
+<%= image_tag content.cover.variant(resize_to_limit: [50,50]).processed %>
+
+
 <div id="<%= dom_id content %>">
+
   <p>
     <strong>Titolo:</strong>
     <%= content.titolo %>

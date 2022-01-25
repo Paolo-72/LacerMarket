@@ -67,7 +67,7 @@ class ContentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def content_params
-      params.require(:content).permit(:titolo, :descrizione, :price)
+      params.require(:content).permit(:titolo, :descrizione, :price, :cover, :allegato)
     end
 
     #Verifico se l'utente loggato è lo stesso dell'utente associato al contenuto
