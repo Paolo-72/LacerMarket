@@ -1,16 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @content %>
+<!--< %= render @content %>-->
 
-<div>
-  
-  <% if @content.user == current_user %>
-    <%= link_to "Edit this content", edit_content_path(@content) %>
-  <% end %>
-   |
-  <%= link_to "Back to contents", contents_path %>
+<div class="row">
+  <div class="col l6">
+    <%= image_tag @content.cover,class:"responsive-img show-img" %>
+  </div>
+  <div class="col l6">
+    <h1 class="show-titolo"><%= @content.titolo %></h1>
 
-  <% if @content.user == current_user  %>
-    <%= button_to "Destroy this content", @content, method: :delete %>
-  <% end %>
+    <h4 class="show-prezzo"><%= number_to_currency(@content.price) %></h4>
+
+    <p>Venduto da <%= @content.user.name %></p>
+
+    <p><%= @content.descrizione %></p>
+    
+  </div>
 </div>
+
+
+<% if @content.user == current_user  %>
+  <%= link_to "Edit", edit_content_path(content) %>
+<% end %>
+<%= link_to "Torna ai contenuti", contents_path %>
