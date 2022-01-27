@@ -17,6 +17,8 @@ gem "turbo-rails"
 
 gem "stimulus-rails"
 
+gem 'jquery-rails'
+
 gem "jbuilder"
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -26,10 +28,15 @@ gem "bootsnap", require: false
 gem 'materialize-sass', '~> 1.0.0'
 
 gem 'sass-rails'
-
+#Gestione utenti e permessi
 gem 'devise'
-
+#Gestione immagini per Active Storage
 gem "image_processing", ">= 1.2"
+#Gestione impaginazione
+gem 'pagy', '~> 5.9'
+
+
+
 
 
 

@@ -8,7 +8,9 @@ class ContentsController < ApplicationController
   
   def index
     #La variabile @contents memorizza tutti i campi della tabella Content (Content.all)
-    @contents = Content.all
+    #@contents = Content.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
+    @pagy, @contents = pagy(Content.all.order("created_at DESC"))
+
   end
 
   

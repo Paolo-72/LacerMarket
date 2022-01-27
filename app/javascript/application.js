@@ -3,3 +3,4 @@ import "@hotwired/turbo-rails"
 import "controllers"
 //= require materialize
 //= require materialize-sprockets
+//= require jquery
