@@ -1,13 +1,23 @@
 class Content < ApplicationRecord
 	#Ogni contenuto appartiene ad un solo utente
 	belongs_to :user
+
+	#Validazione titolo,descrizione e prezzo su inserisci nuovi contenuti
+	validates :titolo, :descrizione, :price, presence: true
+
+	#Validazione formato prezzo su inserisci nuovi contenuti
+	validates :price, numericality: { greater_than: 0 }
+	
 	#Ogni contenuto ha solo un'immagine
 	has_one_attached :cover
-
+	
+	#Ogni contenuto ha solo un allegato
 	has_one_attached :allegato
 
+	#validazione tipo file immagine
 	validate :tipo_file_immagine
 
+	#validazione tipo file allegato
 	validate :tipo_allegato
 
 	private

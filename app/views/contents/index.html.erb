@@ -3,58 +3,46 @@
 
 <!--<h1>Contents</h1>-->
 
+
 <div class="row">
   <% @contents.each do |content| %>
     <div class="col s3"> 
       <div class="card"> 
-        <!--<div id="contents">-->
-          <!--<div id="< %= dom_id content %>">-->      
-            <!--< %= render content %>-->
-
         <div class="card-image waves-effect waves-block waves-light">
           <!-- Resize delle immagini -->
           <!--< %= image_tag content.cover.variant(resize_to_fit: [50,50]).processed, class:"activator" %>-->
           <%= image_tag content.cover, class:"activator" %>
           <!--<img class="activator" src="images/office.jpg">-->
         </div>
-        
-
-
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">more_vert</i></span>
-            <!--<p><a href="#">This is a link</a></p>-->
-          </div>
-
-
-            <div>
-              <!--per verificare se lo user è assegnato al contenuto-->
-              <!--< %= content.user.name if content.user %>-->
-              <span>Venduto da <%= content.user.name %></span>
-              <span class="right"><%= number_to_currency(content.price) %></span>
-            </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">more_vert</i></span>
+          <!--<p><a href="#">This is a link</a></p>-->
+        </div>
+        <div>
+          <!--per verificare se lo user è assegnato al contenuto-->
+          <!--< %= content.user.name if content.user %>-->
+          <span>Venduto da <%= content.user.name %></span>
+          <span class="right"><%= number_to_currency(content.price) %></span>
+        </div>
 
             <br>
             
-              <div class="center">
-                <%= link_to "Scopri di più", content, class: "btn" %>
-              </div>
+        <div class="center">
+          <%= link_to "Scopri di più", content, class: "btn" %>
+        </div>
 
-              <% if content.user == current_user %>
-              <br>
-                <div class="center">
-                  <p><%= link_to "Edit", edit_content_path(content) %>
-                  <%= link_to "Destroy", content, method: :delete %></p>
-                </div>
-              <% end %>
-              <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">close</i></span>
-              <%= content.descrizione %>
-            </div>
-          <!--</div>-->
-        <!--</div>-->
-            
-          
-        
+        <% if content.user == current_user %>
+        <br>
+          <div class="center">
+            <p><%= link_to "Edit", edit_content_path(content) %>
+               <!--< %= link_to 'Destroy',content,method: :delete, data: { confirm: "Sei sicuro di voler cancellare?" } %>-->
+                 <%= link_to "Destroy", [:delete, content] %></p>
+          </div>
+        <% end %>
+          <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">close</i></span>
+            <%= content.descrizione %>
+          </div>        
       </div>
     </div>
   <% end %>
