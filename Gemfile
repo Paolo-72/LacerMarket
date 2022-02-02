@@ -34,6 +34,10 @@ gem 'devise'
 gem "image_processing", ">= 1.2"
 #Gestione impaginazione
 gem 'pagy', '~> 5.9'
+#Friendly Id 
+gem 'friendly_id', '~> 5.4.0'
+#Divisione ambiente di sviluppo da quello di produzione
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 

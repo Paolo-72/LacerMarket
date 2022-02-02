@@ -1,12 +1,20 @@
 class Content < ApplicationRecord
+
+	#Friendly_Id
+	extend FriendlyId
+  	friendly_id :titolo, use: :slugged
+
 	#Ogni contenuto appartiene ad un solo utente
 	belongs_to :user
+
+	#Ogni contenuto può essere venduto più volte
+	has_many :sales
 
 	#Validazione titolo,descrizione e prezzo su inserisci nuovi contenuti
 	validates :titolo, :descrizione, :price, presence: true
 
-	#Validazione formato prezzo su inserisci nuovi contenuti
-	validates :price, numericality: { greater_than: 0 }
+	#Validazione formato prezzo su inserisci nuovi contenuti il sistema Stripe utilizzato per il pagamento accetta transazioni superiori a 50 cents
+	validates :price, numericality: { greater_than: 49 }
 	
 	#Ogni contenuto ha solo un'immagine
 	has_one_attached :cover

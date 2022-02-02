@@ -97,9 +97,15 @@ GEM
       responders
       warden (~> 1.2.3)
     digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.8.11)
@@ -259,6 +265,8 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv-rails
+  friendly_id (~> 5.4.0)
   image_processing (>= 1.2)
   importmap-rails
   jbuilder
