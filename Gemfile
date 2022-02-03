@@ -38,8 +38,10 @@ gem 'pagy', '~> 5.9'
 gem 'friendly_id', '~> 5.4.0'
 #Divisione ambiente di sviluppo da quello di produzione
 gem 'dotenv-rails', groups: [:development, :test]
-
-
+#Ambiente di pagamento Stripe
+gem 'stripe'
+#aasm sicurezza transazioni pagamenti
+gem 'aasm'
 
 
 

@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   #Imposto la pagina About
   get 'about' => 'pages#about'
 
+  #Imposto route azioni di riferimento 'compra e pickup'
+  post '/compra/:slug', to: 'transactions#create',as: :compra
+  get '/pickup/:guid', to: 'transactions#pickup', as: :pickup
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
