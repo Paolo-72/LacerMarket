@@ -20,5 +20,7 @@ module LacerMarket
     # config.eager_load_paths << Rails.root.join("extras")
     #Aggiunto vips come elaborazione immagini.
     config.active_storage.variant_processor = :vips
+    #Configurazione lingua italiana
+    config.i18n.default_locale = :it
   end
 end

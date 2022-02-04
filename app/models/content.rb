@@ -14,7 +14,7 @@ class Content < ApplicationRecord
 	validates :titolo, :descrizione, :price, presence: true
 
 	#Validazione formato prezzo su inserisci nuovi contenuti il sistema Stripe utilizzato per il pagamento accetta transazioni superiori a 50 cents
-	validates :price, numericality: { greater_than: 49 }
+	validates :price, numericality: { greater_than: 0.49 }
 	
 	#Ogni contenuto ha solo un'immagine
 	has_one_attached :cover
