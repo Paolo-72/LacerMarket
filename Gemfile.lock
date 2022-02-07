@@ -290,7 +290,7 @@ DEPENDENCIES
   sass-rails
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   stimulus-rails
   stripe
   turbo-rails
