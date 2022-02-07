@@ -7,7 +7,7 @@ gem "rails", "~> 7.0.0"
 
 gem "sprockets-rails"
 
-gem "sqlite3", "~> 1.4"
+
 
 gem "puma", "~> 5.0"
 
@@ -47,6 +47,7 @@ gem 'aasm'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "sqlite3", "~> 1.4"
   
   
 end
