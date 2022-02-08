@@ -42,6 +42,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'stripe'
 #aasm sicurezza transazioni pagamenti
 gem 'aasm'
+#Storage su cloud S3
+gem "aws-sdk-s3", require: false
 
 
 
