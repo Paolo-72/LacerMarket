@@ -1,4 +1,6 @@
 @import "materialize";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 //Stile della pagina application
 
@@ -6,40 +8,65 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    font-family: 'Raleway', sans-serif;
   }
 
-  h1{
-    font-size: 3em;
-  }
+    h1 {
+      font-size: 3.5em;
+    }
 
-  main {
-    flex: 1 0 auto;
-  }
+    h2 {
+      font-size: 2em;
+    }
 
-  .btn-devise{
-    width: 100%;
-  }
+    main {
+      flex: 1 0 auto;
+    }
 
-  .show-img{
-    padding-right: 5%;
-  }
+    .home-subtitle{
+      margin: 5% 0 5% 0;
+    }
 
-  .show-titolo{
-    margin-top: 0;
-    font-size: 3.4em;
-  }
+    .btn-devise{
+      width: 100%;
+    }
 
-  .show-prezzo{
-    font-size: 2em;
-  }
+    .show-img{
+      padding-right: 5%;
+    }
 
-  .btn-form{
-    width: 100%;
-  }
+    .show-titolo{
+      margin-top: 0;
+      font-size: 3.4em;
+    }
 
-  .card-image{
-    height: 150px;
-  }
+    .show-prezzo{
+      font-size: 2em;
+    }
+
+    .btn-form{
+      width: 100%;
+    }
+
+    .card-image{
+      height: 150px;
+    }
+
+    .fa-social{
+      padding: 0 10px;
+    }
+
+    @media(max-width: 600px){
+        .fa-social{
+        padding: 0 10%;
+      }
+        .no-float{
+        margin-top: 15px;
+      }
+
+    }
+
+    
 
 
   

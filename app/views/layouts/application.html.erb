@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>LacerMarket</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+    <title>LacerMarket</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!--Font Awesame-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
-  <!--javascript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  
-  <!--utilizzo icone materialize-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!--javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    
+    <!--utilizzo icone materialize-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Font utilizzati per il progetto presi da Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+
+      <%= javascript_importmap_tags %>
+      <%= javascript_include_tag "application" %>
+
+    <!--Materialize ottimizzazione per il mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
@@ -34,6 +47,9 @@
       <% end %>
     </div>
 
+    <!--Eliminazione container per l'immagine della pagina di Home utilizzo if con funzione ruby action_name='home' -->
+    <%= render "pages/slider" if action_name == 'home' %>
+
     <!-- la funzione yield permette di scrivere una sola sola volta le parti ripetute nelle varie pagine-->
     <!-- Scrivo la barra di navigazione in alto ed il footer in basso-->      
     <main class="container">
@@ -51,6 +67,13 @@
     $(document).ready(function(){
       $('.sidenav').sidenav();
     })
+  </script>
+
+  <!--jquery per immagine parallax home-->
+  <script>
+    $(document).ready(function(){
+    $('.parallax').parallax();
+  });
   </script>
 
 </html>

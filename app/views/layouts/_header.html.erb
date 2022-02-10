@@ -4,7 +4,7 @@
     <div class="container nav-wrapper">
       <!-- inserisco embedded ruby che ha lo stesso effetto del tag <a> e richiamo la pagina di about-->
       <!--esempio:<p><a href="https://lacerba.io"> Clicca qui</a> per saperne di più </p>-->
-      <%= link_to "LacerMarket" , root_path, class: "brand-logo" %>
+      <%= link_to '<i class =" no-float far fa-save"> LacerMarket</i>'.html_safe, root_path, class: "brand-logo" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><%= link_to "Vendi contenuto", new_content_path %></li>

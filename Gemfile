@@ -7,7 +7,7 @@ gem "rails", "~> 7.0.0"
 
 gem "sprockets-rails"
 
-
+gem 'turbolinks', '~> 5.2.0'
 
 gem "puma", "~> 5.0"
 
@@ -45,6 +45,7 @@ gem 'aasm'
 #Storage su cloud S3
 gem "aws-sdk-s3", require: false
 
+gem 'font-awesome-sass'
 
 
 group :development, :test do
