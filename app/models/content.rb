@@ -41,7 +41,10 @@ class Content < ApplicationRecord
 
 	def tipo_allegato
 		if allegato.attached? && !allegato.content_type.in?(%w(application/msword application/pdf application/vnd.ms-excel application/vnd.ms-powerpoint application/vnd.oasis.opendocument.text application/vnd.openxmlformats-officedocument.presentationml.presentation application/vnd.openxmlformats-officedocument.spreadsheetml.sheet application/vnd.openxmlformats-officedocument.wordprocessingml.document application/zip audio/mpeg audio/mp3 audio/mp4))
-			errors.add(:allegato,'il file deve essere tipo office-aut.,PDF, ZIP, AUDIO')			
+			errors.add(:allegato,'il file deve essere tipo office-aut.,PDF, ZIP, AUDIO')
+			else if allegato.attached? == false			
+				errors.add(:allegato,'Inserisci un file allegato!!')
+			end
 		end
 	end
 end

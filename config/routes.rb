@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   post '/compra/:slug', to: 'transactions#create',as: :compra
   get '/pickup/:guid', to: 'transactions#pickup', as: :pickup
 
+  #Imposto azione per dashboard
+  get 'dashboard' => 'pages#dashboard'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

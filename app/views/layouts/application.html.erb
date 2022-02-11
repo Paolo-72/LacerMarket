@@ -41,6 +41,7 @@
     <!--Flash messages Devise -->
     <div class="container">
       <% flash.each do |type,message| %>
+        <!--Javascript toast per gestione messaggi -->
         <script>
           M.toast({html: '<%= message %>', displayLength: 4000})
         </script>
@@ -74,6 +75,20 @@
     $(document).ready(function(){
     $('.parallax').parallax();
   });
+  </script>
+
+  <!--jquery per tabs dashboard-->
+  <script>
+    $(document).ready(function(){
+      $('.tabs').tabs();
+    });
+  </script>
+
+  <!--jquery per dropdown dashboard-->
+  <script>
+    $( document ).ready(function(){
+      $(".dropdown-trigger").dropdown();
+    });
   </script>
 
 </html>

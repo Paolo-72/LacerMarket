@@ -29,14 +29,6 @@
           <%= link_to "Scopri di più", content, class: "btn" %>
         </div>
 
-        <% if content.user == current_user %>
-        <br>
-          <div class="center">
-            <p><%= link_to "Edit", edit_content_path(content) %>
-               <!--< %= link_to 'Destroy',content, data: { turbo_confirm: "Sei sicuro di voler cancellare?" },turbo_method: :delete %>-->
-                 <%= link_to "Destroy", [:delete, content] %></p>
-          </div>
-        <% end %>
           <div class="card-reveal">
           <span class="card-title grey-text text-darken-4"><%= content.titolo %><i class="material-icons right">close</i></span>
             <%= content.descrizione %>

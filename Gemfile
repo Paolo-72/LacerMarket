@@ -28,6 +28,9 @@ gem "bootsnap", require: false
 gem 'materialize-sass', '~> 1.0.0'
 
 gem 'sass-rails'
+
+gem 'coffee-rails'
+
 #Gestione utenti e permessi
 gem 'devise'
 #Gestione immagini per Active Storage
